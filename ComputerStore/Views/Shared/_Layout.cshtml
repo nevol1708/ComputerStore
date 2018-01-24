@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+@using ComputerStore.Models;
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Laptop Tiến Thành", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>
+                        <a href="@Url.Action("Index", "GioHang")">
+                            @if (Session["GioHang"] == null)
+                            {
+                                <span>0</span>
+                            }
+                            else
+                            {
+                                <span>
+                                    ( @((Session["GioHang"] as List<GioHang>).Sum(m => m.iSoLuong)) )
+                                </span>
+                            }
+                            &nbsp;<span class="glyphicon glyphicon-shopping-cart"></span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="col-md-4">
+                    <form class="navbar-form" role="search">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search" />
+                            <div class="input-group-btn">
+                                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li><a>Sign up</a></li>
+                    <li><a href="@Url.Action("Login", "Manager")">Sign in</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <br />
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - ThanhPTg</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

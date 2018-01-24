@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ComputerStoreModelStoreContainer" CdmEntityContainer="ComputerStoreEntities">
+    <EntitySetMapping Name="ChiTietNhaPhanPhois">
+      <EntityTypeMapping TypeName="ComputerStoreModel.ChiTietNhaPhanPhoi">
+        <MappingFragment StoreEntitySet="ChiTietNhaPhanPhoi">
+          <ScalarProperty Name="MaNPP" ColumnName="MaNPP" />
+          <ScalarProperty Name="TenNPP" ColumnName="TenNPP" />
+          <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChiTietNSXes">
+      <EntityTypeMapping TypeName="ComputerStoreModel.ChiTietNSX">
+        <MappingFragment StoreEntitySet="ChiTietNSX">
+          <ScalarProperty Name="MaNSX" ColumnName="MaNSX" />
+          <ScalarProperty Name="TenNSX" ColumnName="TenNSX" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChiTietSPs">
+      <EntityTypeMapping TypeName="ComputerStoreModel.ChiTietSP">
+        <MappingFragment StoreEntitySet="ChiTietSP">
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+          <ScalarProperty Name="TenSP" ColumnName="TenSP" />
+          <ScalarProperty Name="MaNSX" ColumnName="MaNSX" />
+          <ScalarProperty Name="CPU" ColumnName="CPU" />
+          <ScalarProperty Name="RAM" ColumnName="RAM" />
+          <ScalarProperty Name="HDD" ColumnName="HDD" />
+          <ScalarProperty Name="Screen" ColumnName="Screen" />
+          <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+          <ScalarProperty Name="Anh" ColumnName="Anh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HoaDonNhaps">
+      <EntityTypeMapping TypeName="ComputerStoreModel.HoaDonNhap">
+        <MappingFragment StoreEntitySet="HoaDonNhap">
+          <ScalarProperty Name="MaHoaDon" ColumnName="MaHoaDon" />
+          <ScalarProperty Name="MaNPP" ColumnName="MaNPP" />
+          <ScalarProperty Name="NhanVienNhap" ColumnName="NhanVienNhap" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HoaDonXuats">
+      <EntityTypeMapping TypeName="ComputerStoreModel.HoaDonXuat">
+        <MappingFragment StoreEntitySet="HoaDonXuat">
+          <ScalarProperty Name="MaHoaDon" ColumnName="MaHoaDon" />
+          <ScalarProperty Name="TenKhachHang" ColumnName="TenKhachHang" />
+          <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="NgayMuaHang" ColumnName="NgayMuaHang" />
+          <ScalarProperty Name="NhanVienBanHang" ColumnName="NhanVienBanHang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NhanViens">
+      <EntityTypeMapping TypeName="ComputerStoreModel.NhanVien">
+        <MappingFragment StoreEntitySet="NhanVien">
+          <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+          <ScalarProperty Name="TenNhanVien" ColumnName="TenNhanVien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SanPhams">
+      <EntityTypeMapping TypeName="ComputerStoreModel.SanPham">
+        <MappingFragment StoreEntitySet="SanPham">
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChiTietHoaDonNhaps">
+      <EntityTypeMapping TypeName="ComputerStoreModel.ChiTietHoaDonNhap">
+        <MappingFragment StoreEntitySet="ChiTietHoaDonNhap">
+          <ScalarProperty Name="MaHoaDon" ColumnName="MaHoaDon" />
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

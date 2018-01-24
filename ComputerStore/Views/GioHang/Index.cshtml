@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="color: red">Chi tiết giỏ hàng</h2>
+<div class="row">
+    <table class="table-striped table-bordered text-center">
+        <tr>
+            <td class="col-md-1">Mã Sản Phẩm</td>
+
+            <td class="col-md-3">Tên Sản Phẩm</td>
+
+            <td class="col-md-2">Ảnh Đại Diện</td>
+
+            <td class="col-md-2">Đơn giá</td>
+
+            <td class="col-md-2">Số lượng</td>
+
+            <td class="col-md-2">Thành tiền</td>
+
+            <td class="col-md-1">Xóa</td>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="col-md-1">@item.sMaSP</td>
+                <td class="col-md-3">@item.sTenSP</td>
+                <td class="col-md-2"><img src="@Url.Content("~/Content/images/" + item.sAnhDaiDien)" style="height: 150px; width: auto" /></td>
+                <td class="col-md-2">@String.Format("{0:0,0}", item.dDonGia) VNĐ</td>
+                <td class="col-md-2">@item.iSoLuong</td>
+                <td class="col-md-2">@String.Format("{0:0,0}", item.ThanhTien) VNĐ</td>
+                <td class="col-md-1">
+                    <form method="post" action="@Url.Action("deleteCartItem", "GioHang", new { sMaSanPham = item.sMaSP }) ">
+                        <input type="hidden" name="sMaSP" value="@item.sMaSP" />
+                        <button type="submit" onclick="return confirm('Bạn có muốn xóa sản phẩm này khỏi giỏ?');">Xóa</button>
+                    </form>
+                </td>
+            </tr>
+        }
+        <tr>
+            <td colspan="3"></td>
+            <td colspan="4">Tổng tiền: </td>
+        </tr>
+    </table>
+</div>

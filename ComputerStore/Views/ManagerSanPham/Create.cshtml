@@ -1,0 +1,114 @@
+﻿@model ComputerStore.Models.ChiTietSP
+
+@{
+    ViewBag.Title = "Thêm sản phẩm mới";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <div class="col-md-2">
+                Mã Sản Phẩm
+            </div>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TenSP, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MaSP, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-2">
+                Tên Sản Phẩm
+            </div>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TenSP, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TenSP, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-2">
+                Nhà Sản Xuất
+            </div>
+            <div class="col-md-10">
+                @Html.DropDownList("MaNSX", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.MaNSX, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-2">
+                CPU
+            </div>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CPU, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CPU, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-2">
+                RAM
+            </div>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.RAM, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.RAM, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-2">
+                HDD
+            </div>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.HDD, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.HDD, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-2">
+                Màn Hình
+            </div>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Screen, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Screen, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-2">
+                Đơn Giá
+            </div>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DonGia, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DonGia, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-2">
+                Ảnh
+            </div>
+            <div class="col-md-10">
+                <input type="file" name="file" class="form-control validate[required]" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

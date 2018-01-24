@@ -1,0 +1,18 @@
+﻿@using ComputerStore.Models;
+@{
+    ViewBag.Title = "OrderRAM";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+@foreach (ChiTietSP item in ViewBag.sanphams)
+{
+    <div class="col-md-4" style="border: solid 1px; color: grey; height: 200px">
+        <a href="@Url.Action("ViewDetails", "SanPham", new { _id = item.MaSP})">
+            <img src="~/Content/Images/@item.Anh" style="width:150px; height:auto" />
+        </a><br />
+
+        <a href="@Url.Action("ViewDetails", "SanPham", new { _id = item.MaSP})">@item.TenSP</a>
+
+        <p style="color:red">@string.Format("{0:0,0}", item.DonGia)</p>
+    </div>
+}

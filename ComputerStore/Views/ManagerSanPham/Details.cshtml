@@ -1,0 +1,97 @@
+﻿@model ComputerStore.Models.ChiTietSP
+
+@{
+    ViewBag.Title = @Model.TenSP;
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div>
+    <h4>Chi tiết sản phẩm</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Mã Sản Phẩm
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaSP)
+        </dd>
+
+        <dt>
+            Tên Sản Phẩm
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenSP)
+        </dd>
+
+        <dt>
+            CPU
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CPU)
+        </dd>
+
+        <dt>
+            RAM
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RAM)
+        </dd>
+
+        <dt>
+            HDD
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HDD)
+        </dd>
+
+        <dt>
+            Màn Hình
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Screen)
+        </dd>
+
+        <dt>
+            Đơn Giá
+        </dt>
+
+        <dd>
+            @String.Format("{0:0,0}", Model.DonGia)
+        </dd>
+
+        <dt>
+            Ảnh
+        </dt>
+
+        <dd>
+            <img src="~/Content/Images/@Model.Anh" />
+        </dd>
+
+        <dt>
+            Tên Nhà Sản Xuất
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChiTietNSX.TenNSX)
+        </dd>
+
+        <dt>
+            Số Lượng
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SanPham.SoLuong)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaSP }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

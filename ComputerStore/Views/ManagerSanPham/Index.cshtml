@@ -1,0 +1,80 @@
+﻿@model IEnumerable<ComputerStore.Models.ChiTietSP>
+
+@{
+    ViewBag.Title = "Danh sách sản phẩm";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<p>
+    @Html.ActionLink("Thêm Sản Phẩm Mới", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th class="col-md-1">
+            Mã Sản Phẩm
+        </th>
+        <th class="col-md-1">
+            Tên Sản Phẩm
+        </th>
+        <th class="col-md-1">
+            CPU
+        </th>
+        <th class="col-md-1">
+            RAM
+        </th>
+        <th class="col-md-1">
+            HDD
+        </th>
+        <th class="col-md-1">
+            Màn Hình
+        </th>
+        <th class="col-md-1">
+            Đơn Giá
+        </th>
+        <th class="col-md-1">
+            Hình Ảnh
+        </th>
+        <th class="col-md-1">
+            Tên Hãng Sản Xuất
+        </th>
+        <th class="col-md-3"></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td class="col-md-1">
+                @Html.DisplayFor(modelItem => item.SanPham.MaSP)
+            </td>
+            <td class="col-md-1">
+                @Html.DisplayFor(modelItem => item.TenSP)
+            </td>
+            <td class="col-md-1">
+                @Html.DisplayFor(modelItem => item.CPU)
+            </td>
+            <td class="col-md-1">
+                @Html.DisplayFor(modelItem => item.RAM)
+            </td>
+            <td class="col-md-1">
+                @Html.DisplayFor(modelItem => item.HDD)
+            </td>
+            <td class="col-md-1">
+                @Html.DisplayFor(modelItem => item.Screen)
+            </td>
+            <td class="col-md-1">
+                @String.Format("{0:0,0}", item.DonGia)
+            </td>
+            <td class="col-md-1">
+                <img style="width: auto; height: 100px" src="~/Content/Images/@item.Anh" />
+            </td>
+            <td class="col-md-1">
+                @Html.DisplayFor(modelItem => item.ChiTietNSX.TenNSX)
+            </td>
+            <td class="col-md-3">
+                @Html.ActionLink("Edit", "Edit", new { _id = item.MaSP }) |
+                @Html.ActionLink("Details", "Details", new { _id = item.MaSP })
+            </td>
+        </tr>
+    }
+
+</table>

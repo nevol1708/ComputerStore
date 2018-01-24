@@ -1,0 +1,51 @@
+﻿@using ComputerStore.Models;
+@model ChiTietSP
+
+@{
+    ViewBag.Title = "ViewDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-6">
+        <img src="~/Content/Images/@Model.Anh" style="width: 400px; height: auto"/>
+    </div>
+    <div class="col-md-6">
+        <h2><b>Laptop @Model.TenSP</b></h2>
+        <h5>Mã sản phẩm: @Model.MaSP</h5>
+        <h3><b>Mô tả sản phẩm:</b></h3>
+        <h4>Bộ vi xử lý @Model.CPU</h4>
+        <h4>Ổ cứng @Model.HDD</h4>
+        <h4>Màn hình @Model.Screen</h4>
+        <h3 style="color:red">@String.Format("{0:0,0}", Model.DonGia)</h3>
+        <a href="#" class="btn btn-primary" role="button">Mua luôn</a>
+        <a href="@Url.Action("addToCart", "GioHang", new {sMaSanpham = Model.MaSP})" class="btn btn-danger" role="button">Thêm vào giỏ hàng</a>
+    </div>
+</div>
+<div class="row">
+    <br />
+    <div class="col-md-12"><h2>Mô tả chi tiết</h2></div>
+    <br />
+    <table class="table-striped table-bordered">
+        <tr>
+            <td class="col-md-4"><p>Mã sản phẩm</p></td>
+            <td class="col-md-4">@Model.MaSP</td>
+        </tr>
+        <tr>
+            <td class="col-md-4"><p>Tên sản phẩm</p></td>
+            <td class="col-md-4">Laptop @Model.TenSP</td>
+        </tr>
+        <tr>
+            <td class="col-md-4"><p>Vi xử lý</p></td>
+            <td class="col-md-4">@Model.CPU</td>
+        </tr>
+        <tr>
+            <td class="col-md-4"><p>Ổ cứng</p></td>
+            <td class="col-md-4">@Model.HDD</td>
+        </tr>
+        <tr>
+            <td class="col-md-4"><p>Màn hình</p></td>
+            <td class="col-md-4">@Model.Screen</td>
+        </tr>
+    </table>
+</div>

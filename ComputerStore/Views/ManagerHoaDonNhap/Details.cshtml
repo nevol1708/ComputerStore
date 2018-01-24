@@ -1,0 +1,35 @@
+﻿@model ComputerStore.Models.HoaDonNhap
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>HoaDonNhap</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ChiTietNhaPhanPhoi.TenNPP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChiTietNhaPhanPhoi.TenNPP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NhanVien.TenNhanVien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NhanVien.TenNhanVien)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaHoaDon }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
